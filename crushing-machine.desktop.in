@@ -1,0 +1,14 @@
+[Desktop Entry]
+_Name = Crushing machine
+_GenericName = Crushing machine
+_Comment = Secure File Deletion
+Version = 1.0
+Type = Application
+Terminal = false
+Exec = /usr/bin/crushing-machine %U
+Icon = /usr/share/icons/gnome/256x256/actions/crushing-machine.png
+MimeType = application/octet-stream
+$Name[es] = _('Crushing machine')
+$GenericName[es] = _('Crushing machine')
+$Comment[es] = _('Secure File Deletion')
+

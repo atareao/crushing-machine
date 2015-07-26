@@ -1,0 +1,58 @@
+#!/usr/bin/python3
+# -*- coding: UTF-8 -*-
+#
+# Crushing-Machine launcher
+#
+# Copyright (C) 2011-2014 Lorenzo Carbonell Cerezo
+# lorenzo.carbonell.cerezo@gmail.com
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+#
+#
+import sys
+import os
+import locale
+import gettext
+
+if __file__.startswith('/usr/bin'):
+	sys.path.insert(1, '/usr/share/nautilus-python/extensions')
+else:
+	sys.path.insert(1,os.path.normpath(os.path.join(os.getcwd(), '../src')))
+from crushingmachine import SecureDelete
+
+if __name__ == '__main__':
+	try:
+		current_locale, encoding = locale.getdefaultlocale()
+		language = gettext.translation('crushing-machine', '/usr/share/locale-langpack', [current_locale])
+		language.install()
+		if sys.version_info[0] == 3:
+			_ = language.gettext
+		else:
+			_ = language.ugettext
+	except Exception as e:
+		print(e)
+		_ = str	
+	LOCAL_LAUNCHER = os.path.join(os.path.expanduser('~'),'.local/share/applications/crushing-machine.desktop')
+	if not os.path.exists(LOCAL_LAUNCHER):
+		shutil.copyfile('/usr/share/applications/crushing-machine.desktop', LOCAL_LAUNCHER)
+	if len(sys.argv) < 2:
+		print(_('At least one file to trash'))
+		files = []
+	else:
+		files=sys.argv[1:]	
+	sd = SecureDelete(files)
+	sd.run()	
+	exit(0)
+	

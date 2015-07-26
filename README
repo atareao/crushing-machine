@@ -1,0 +1,30 @@
+====================
+Crushing-Machine
+====================
+
+An application to destroy files
+
+For more information, please visit our website:
+http://www.atareao.es
+
+============
+Requirements
+============
+
+Required dependencies:
+
+	python3,
+	python3-gi,
+	gir1.2-gtk-3.0,
+	gir1.2-nautilus-3.0,
+	python-concurrent.futures,
+	python-nautilus,
+	secure-delete
+
+========
+Download
+========
+
+Download the package:
+
+    $ bzr branch lp:crushing-machine
