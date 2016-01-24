@@ -1,3 +1,10 @@
+crushing-machine (0.0.4-0extras15.10.0) wily; urgency=medium
+
+  * To Wily
+  * Added multithread and daemons
+
+ -- Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>  Sun, 24 Jan 2016 09:35:47 +0100
+
 crushing-machine (0.0.3-0extras14.04.0) trusty; urgency=low
 
   * To Trusty
