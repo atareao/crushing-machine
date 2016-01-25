@@ -89,7 +89,7 @@ class Worker(GObject.GObject,threading.Thread):
 			if afile is None or self.sd.stop:
 				break
 			if afile!=None and os.path.exists(afile):
-				args = ['srm','-r', afile]
+				args = ['srm','-lvr', afile]
 				print(_('Crushing')+' %s'%afile)
 				subprocess.call(args)
 				print(_('Crushed')+' %s'%afile)
