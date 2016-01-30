@@ -1,10 +1,9 @@
-
 crushing-machine (0.0.5-0extras15.10.2) wily; urgency=medium
 
   * Only 2 passes
   * Fixed running python2 on nautilus-extension
 
- -- Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>  Sat, 30 Jan 2016 17:39:00 +0100
+ -- Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>  Sat, 30 Jan 2016 17:42:57 +0100
 
 crushing-machine (0.0.4-0extras15.10.0) wily; urgency=medium
 
