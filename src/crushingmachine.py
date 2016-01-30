@@ -31,7 +31,7 @@ from gi.repository import Nautilus
 from gi.repository import Unity
 try:
 	from urllib.request import url2pathname
-except: 
+except ImportError: 
 	from urllib import url2pathname
 import shutil
 import time
@@ -42,7 +42,10 @@ import locale
 import gettext
 import subprocess
 import threading
-import queue
+try:
+    import queue
+except ImportError:
+    import Queue as queue
 
 NUM_THREADS = 4
 GObject.threads_init()
