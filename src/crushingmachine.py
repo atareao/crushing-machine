@@ -29,8 +29,10 @@ from gi.repository import Gdk
 from gi.repository import GObject
 from gi.repository import Nautilus
 from gi.repository import Unity
-import urllib
-import urllib.request
+try:
+	from urllib.request import url2pathname
+except: 
+	from urllib import url2pathname
 import shutil
 import time
 import sys
@@ -39,9 +41,6 @@ import shlex
 import locale
 import gettext
 import subprocess
-import functools
-import concurrent
-import concurrent.futures
 import threading
 import queue
 
@@ -215,7 +214,7 @@ class SecureDelete(Gtk.Dialog): # needs GTK, Python, Webkit-GTK
 		model = self.treeview.get_model()
 		for filename in selection_data.get_uris():
 			if len(filename)>8:
-				filename = urllib.request.url2pathname(filename)
+				filename = url2pathname(filename)
 				filename = filename[7:]
 				model.append([filename])
 				
